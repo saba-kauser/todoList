@@ -10,7 +10,13 @@ app.use(express.json());
 
 const tasksRouter = require("./routes/taskRoutes");
 
+const projectRouter = require("./routes/projectRoutes");
+
+
 app.use("/tasks", tasksRouter);
+
+app.use("/projects", projectRouter);
+
 
 // Start the server
 app.listen(PORT, () =>

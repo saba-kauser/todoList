@@ -1,8 +1,6 @@
 const { ObjectId } = require("mongodb");
 const { getDb } = require("../dbConnect/dbConnect");
 const Project = require("../documentStructure/project");
-const Task = require("../documentStructure/task");
-const TaskController = require("./taskController");
 
 //projectcontroller class
 class ProjectController {

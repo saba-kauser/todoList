@@ -5,8 +5,8 @@ class TaskController {
   // check if tasks exists by passing id
 
   static async checkTaskExist(id) {
-    const db = getDb();
-    const task = await db.collection("tasks").findOne({ _id: id });
+    const db = getDb(); 
+    const task = await db.collection("tasks").findOne({ _id: id }); //finds the task with the id in the collection
     return !!task;
   }
 
@@ -22,21 +22,21 @@ class TaskController {
   static async createTask(name, status, dueDate, startDate) {
     const db = getDb();
     const newTask = new Task(name, status, dueDate, startDate);
-    await db.collection("tasks").insertOne(newTask);
+    await db.collection("tasks").insertOne(newTask); //inserts a new document in the task collection
     return newTask;
   }
 
   //lists all tasks
   static async getTasks() {
-    const db = getDb();
-    const tasks = await db.collection("tasks").find().toArray();
+    const db = getDb(); //gets the db
+    const tasks = await db.collection("tasks").find().toArray(); //gets all the tasks from the collection
     return tasks;
   }
 
   //get a single task
   static async getTaskByID(id) {
     const db = getDb();
-    const task= await db.collection("tasks").findOne({ _id: id });
+    const task= await db.collection("tasks").findOne({ _id: id }); //finds the document in the task collection with the id
     if (!task) {
       throw new Error("Task not found");
     }
@@ -46,17 +46,17 @@ class TaskController {
   // update tasks all tasks
   static async updateTask(id, name, dueDate) {
     await this.throwErrorIfTaskNotExist(id);
-    const db = getDb();
-    const taskInDB = await db.collection("tasks").findOne({ _id: id });
+    const db = getDb(); //gets db 
+    const taskInDB = await db.collection("tasks").findOne({ _id: id }); //finds the document with same id as the one passed in api
     const updatedTask = new Task(
       name,
       taskInDB.status,
       dueDate,
       taskInDB.startDate
-    );
+    );      //calls the task constructor to pass the data 
     await db
       .collection("tasks")
-      .updateOne({ _id: id }, { $set: { name, dueDate } });
+      .updateOne({ _id: id }, { $set: { name, dueDate } }); //inside the collection updates the passed data with the document that matches the id
     return updatedTask;
   }
 
@@ -64,13 +64,13 @@ class TaskController {
   static async deleteTask(id) {
     await this.throwErrorIfTaskNotExist(id);
     const db = getDb();
-    await db.collection("tasks").deleteOne({ _id: id });
+    await db.collection("tasks").deleteOne({ _id: id }); //deletes the document from the collection
   }
 
   //mark tasks as todo / done
   static async MarkTaskTodoDone(id) {
     const db = getDb();
-    const taskExist = await db.collection("tasks").findOne({ _id: id });
+    const taskExist = await db.collection("tasks").findOne({ _id: id }); //finds the document with id
     if (!taskExist) {
       throw new Error("Task not found");
     }
@@ -82,7 +82,7 @@ class TaskController {
       // Else if task is not done, mark it as done and set done date.
       set = { status: "done", doneDate: new Date() };
     }
-    await db.collection("tasks").updateOne({ _id: id }, { $set: set });
+    await db.collection("tasks").updateOne({ _id: id }, { $set: set }); //updates the task with data
   }
 
   //filter tasks by status
@@ -92,7 +92,7 @@ class TaskController {
       .collection("tasks")
       .find({ status: { $regex: status } })
       .toArray();
-    return tasks;
+    return tasks; 
   }
 
   //get tasks by name
@@ -111,6 +111,7 @@ class TaskController {
   //gets tasks by sortDate
   static async getTasksBySortDate(sortDate) {
     if (
+      //compares the string to the fields
       sortDate !== "startDate" &&
       sortDate !== "dueDate" &&
       sortDate !== "doneDate"
@@ -118,7 +119,7 @@ class TaskController {
       throw new Error("Invalid sort date");
     }
     const db = getDb();
-    const sort = {};
+    const sort = {}; 
     sort[sortDate] = 1;
     let tasks = [];
     if (sortDate === "doneDate") {
@@ -130,7 +131,7 @@ class TaskController {
         .sort(sort)
         .toArray();
     } else {
-      tasks = await db.collection("tasks").find().sort(sort).toArray();
+      tasks = await db.collection("tasks").find().sort(sort).toArray(); //sorts the tasks in the collection by date
     }
     return tasks;
   }

@@ -38,7 +38,7 @@ ii. due date
   contains all the routes to get , post , update , delete , mark as to do / done, get by status , get by name , get by sort date respectively
 
 # controller
-  class Task 
+Task class contains 
   functions to :
   check if the tasks exists
   throw error if the task does not exist
@@ -51,6 +51,10 @@ ii. due date
   get tasks by name
   get tasks by sort date
   
+# document structure
+ 
+ contains a functions to validate fields and a constructor function
+ 
 
   
   

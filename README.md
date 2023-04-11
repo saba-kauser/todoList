@@ -82,8 +82,8 @@ functions to :
 # dbConnect
   contains functions to local mongodb database using the url string , gets database and closes database connection
 
-# PostMan Collection
-  Attached a postman collection json file with APIs to test the data 
+# postManCollection
+  Postman collection json file with APIs to test the data is stored in PostManCollection Folder 
   replace the localhost url and respective IDs while testing each API
   
 1. the start date has to be earlier than the due date , the date format is MM/DD/YYYY 

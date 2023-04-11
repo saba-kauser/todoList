@@ -1,4 +1,4 @@
-# todoList
+# todoList API
 
 Create endpoints for a to-do list API management: create, edit, delete, list, mark as to-do/done, filter by status, sort by dates
 1. create a new MongoDB database: “todoList”
@@ -81,6 +81,9 @@ functions to :
 
 # PostMan Collection
   Attached a postman collection json file with APIs to test the data 
+  replace the localhost url and respective IDs while testing each API
+  NOTE : 1. the start date has to be earlier than the due date , the date format is MM/DD/YYYY 
+         2. the paramater for the sorting are - dueDate, sortDate and doneDate
   
 
 

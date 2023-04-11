@@ -1,0 +1,430 @@
+{
+	"info": {
+		"_postman_id": "34833220-5edf-4287-ab79-0ae9fcf8ac9f",
+		"name": "todo_List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26804631"
+	},
+	"item": [
+		{
+			"name": "projects_api",
+			"item": [
+				{
+					"name": "crud",
+					"item": [
+						{
+							"name": "http://localhost:6000/projects/create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"testsample\",\n    \"dueDate\": \"12/03/2023\",\n    \"startDate\":\"01/03/2023\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6000/projects/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"projects",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/projects/list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/projects/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"projects",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/projects/643537b27cef32af2dad2dda",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/projects/643537b27cef32af2dad2dda",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"projects",
+										"643537b27cef32af2dad2dda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/projects/643537b27cef32af2dad2dda",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"test project\",\n    \"dueDate\": \"12/03/2023\",\n    \"startDate\":\"01/03/2023\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6000/projects/64353c99d73d19862e8be4cf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"projects",
+										"64353c99d73d19862e8be4cf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tasks_api",
+			"item": [
+				{
+					"name": "crud",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"testname\",\n    \"status\" : \"to-do\",\n    \"dueDate\": \"11/03/2023\",\n    \"startDate\":\"02/01/2023\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6000/tasks/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/64351fa22737549296ceabdc",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"new sample test\",\n    \"status\" : \"to-do\",\n    \"dueDate\": \"10/08/2023\",\n    \"startDate\":\"03/02/2023\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6000/tasks/64351ea7fd5470a867c52b9c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"64351ea7fd5470a867c52b9c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/6435077114e16d7b54f88f4e",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/64351d34fd5470a867c52b9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"64351d34fd5470a867c52b9a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mark task as done",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/6435079f14e16d7b54f88f4f/done",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:6000/tasks/64351ea7fd5470a867c52b9c/done",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"64351ea7fd5470a867c52b9c",
+										"done"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "filter tasks by status",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/status/to-do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/status/done",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"status",
+										"done"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/status/to-do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/status/to-do",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"status",
+										"to-do"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sort by date",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/sort/date/doneDate",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/sort/date/dueDate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"sort",
+										"date",
+										"dueDate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/sort/date/startDate",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/sort/date/startDate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"sort",
+										"date",
+										"startDate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:6000/tasks/sort/date/doneDate",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/sort/date/doneDate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"sort",
+										"date",
+										"doneDate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "show single task",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/64351ea7fd5470a867c52b9c",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/64351ea7fd5470a867c52b9c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"64351ea7fd5470a867c52b9c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get task by name",
+					"item": [
+						{
+							"name": "http://localhost:6000/tasks/name/testname",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6000/tasks/name/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6000",
+									"path": [
+										"tasks",
+										"name",
+										"test"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

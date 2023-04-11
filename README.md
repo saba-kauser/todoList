@@ -1,6 +1,7 @@
 # todoList API
 
 Create endpoints for a to-do list API management: create, edit, delete, list, mark as to-do/done, filter by status, sort by dates
+#
 1. create a new MongoDB database: “todoList”
 2. create a new MongoDB collection: tasks
 3. define data structure for MongoDB documents in tasks collection (according to requirements below)
@@ -18,6 +19,7 @@ ii. due date
 
 
 Create endpoints for projects management, tasks can now be assigned to a project
+#
 1. create a new MongoDB collection: projects
 2. define data structure for MongoDB documents in projects collection (according to requirements
 below)
@@ -34,6 +36,7 @@ d. delete a project
   npm start
   
 # download install and set up mongodb on your local machine
+
 1.create todoList database 
 2.create collection called tasks in the todoList database
 3.create collection called projects in the todoList database
@@ -82,6 +85,7 @@ functions to :
 # PostMan Collection
   Attached a postman collection json file with APIs to test the data 
   replace the localhost url and respective IDs while testing each API
+  
 1. the start date has to be earlier than the due date , the date format is MM/DD/YYYY 
 2. the paramater for the sorting are - dueDate, sortDate and doneDate 
   

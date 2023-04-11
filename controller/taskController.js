@@ -33,7 +33,17 @@ class TaskController {
     return tasks;
   }
 
-  // lists all tasks
+  //get a single task
+  static async getTaskByID(id) {
+    const db = getDb();
+    const task= await db.collection("tasks").findOne({ _id: id });
+    if (!task) {
+      throw new Error("Task not found");
+    }
+    return task;
+  }
+
+  // update tasks all tasks
   static async updateTask(id, name, dueDate) {
     await this.throwErrorIfTaskNotExist(id);
     const db = getDb();

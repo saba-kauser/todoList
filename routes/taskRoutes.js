@@ -31,6 +31,19 @@ router.get("/list", async (req, res) => {
   }
 });
 
+//list a single task
+router.get("/:id", async (req, res) => {
+  try {
+    const id = new ObjectId(req.params.id);
+    const task= await TaskController.getTaskByID(id);
+    res.send(task);
+  } catch (error) {
+    console.error(error);
+    res.status(400).send("Error getting task");
+  }
+});
+
+
 //update task
 router.patch("/:id", async (req, res) => {
   try {

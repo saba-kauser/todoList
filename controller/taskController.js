@@ -92,7 +92,7 @@ class TaskController {
       .collection("tasks")
       .find({ status: { $regex: status } })
       .toArray();
-    return tasks; 
+    return tasks;  //filter using reqex in the collection and returns the match
   }
 
   //get tasks by name
@@ -120,8 +120,9 @@ class TaskController {
     }
     const db = getDb();
     const sort = {}; 
-    sort[sortDate] = 1;
-    let tasks = [];
+    sort[sortDate] = 1; //stores the value of the sortDate that has been passed
+    let tasks = []; // an empty array
+    //checks if the sort Date is done Date , sorts them and returns 
     if (sortDate === "doneDate") {
       tasks = await db
         .collection("tasks")
@@ -131,7 +132,7 @@ class TaskController {
         .sort(sort)
         .toArray();
     } else {
-      tasks = await db.collection("tasks").find().sort(sort).toArray(); //sorts the tasks in the collection by date
+      tasks = await db.collection("tasks").find().sort(sort).toArray(); //else returns the tasks with sorted documents from the collection
     }
     return tasks;
   }

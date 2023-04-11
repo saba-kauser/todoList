@@ -83,7 +83,7 @@ functions to :
   contains functions to local mongodb database using the url string , gets database and closes database connection
 
 # postManCollection
-  Postman collection json file with APIs to test the data is stored in /postManCollection Folder
+  Postman collection json file with APIs to test the data is stored in ```/postManCollection``` Folder
   replace the localhost url and respective IDs while testing each API
   
 1. the start date has to be earlier than the due date , the date format is MM/DD/YYYY 

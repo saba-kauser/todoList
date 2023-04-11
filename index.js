@@ -2,20 +2,20 @@ const express = require("express");
 const { connectDb } = require("./dbConnect/dbConnect");
 
 const app = express();
-const PORT = 6000;
+const PORT = 6000; //localhost PORT to listen
 
-connectDb("todoList");
+connectDb("todoList"); //connect to loalDatabase 
 
-app.use(express.json());
+app.use(express.json()); 
 
-const tasksRouter = require("./routes/taskRoutes");
+const tasksRouter = require("./routes/taskRoutes"); //routes for tasks
 
-const projectRouter = require("./routes/projectRoutes");
+const projectRouter = require("./routes/projectRoutes"); //routes for projects
 
 
-app.use("/tasks", tasksRouter);
+app.use("/tasks", tasksRouter); //path for tasks with the routes
 
-app.use("/projects", projectRouter);
+app.use("/projects", projectRouter); //path for projects with routes
 
 
 // Start the server

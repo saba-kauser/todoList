@@ -2,15 +2,15 @@ const { getDb } = require("../dbConnect/dbConnect");
 const Task = require("../documentStructure/task");
 
 class TaskController {
-  // check if tasks exists by passing id
-
+  
+  // Gets the id from the collection and returns it 
   static async checkTaskExist(id) {
     const db = getDb(); 
     const task = await db.collection("tasks").findOne({ _id: id }); //finds the task with the id in the collection
     return !!task;
   }
 
-  // throws an error if a task does not exist.
+  // checks if id exists and throws an error if a task does not exist.
   static async throwErrorIfTaskNotExist(id) {
     const taskExist = await this.checkTaskExist(id);
     if (!taskExist) {
@@ -45,7 +45,7 @@ class TaskController {
 
   // update tasks all tasks
   static async updateTask(id, name, dueDate) {
-    await this.throwErrorIfTaskNotExist(id);
+    await this.throwErrorIfTaskNotExist(id); //checking if id exists
     const db = getDb(); //gets db 
     const taskInDB = await db.collection("tasks").findOne({ _id: id }); //finds the document with same id as the one passed in api
     const updatedTask = new Task(

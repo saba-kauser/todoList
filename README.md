@@ -32,4 +32,26 @@ ii. due date
 # change the name of the database in index.js file
   connectDb("your database name")
   
+# Folder Structure
+
+# routes
+  contains all the routes to get , post , update , delete , mark as to do / done, get by status , get by name , get by sort date respectively
+
+# controller
+  class Task 
+  functions to :
+  check if the tasks exists
+  throw error if the task does not exist
+  create task
+  get task list
+  update task
+  delete task
+  mark task as to do / done
+  get tasks by status
+  get tasks by name
+  get tasks by sort date
+  
+
+  
+  
   
